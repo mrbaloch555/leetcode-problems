@@ -1,0 +1,26 @@
+package main
+
+import "fmt"
+
+func countSubarrays(nums []int, minK int, maxK int) int64 {
+    minIndex := findMinMax(nums, minK);
+    maxIndex := findMinMax(nums, maxK)
+    fmt.Println(minIndex, maxIndex)
+
+    return 0
+}
+
+func findMinMax(nums []int,k int) int{
+    for i := 0; i < len(nums); i++ {
+        if nums[i] == k {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+func main(){
+    nums := []int{1,3,5,2,7,5}
+    fmt.Println(countSubarrays(nums, 1, 5))
+}
